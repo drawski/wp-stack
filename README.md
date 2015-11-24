@@ -23,6 +23,7 @@ It consists of the following components:
 * WordPress code in a separate directory (managed by Composer as a dependency)
 * WordPress themes and plugins managed by Composer as a dependency
 * Vagrant for complete local environment
+* Capistrano as a deployer
 
 
 ## Installation
@@ -33,7 +34,7 @@ It consists of the following components:
 4. Go to the project folder, type `vagrant up` and wait for Vagrant to setup your local environment.
 5. Type `vagrant ssh` and then download all the dependencies from Vagrant machine: `cd /vagrant && composer install`.
 6. Now you can start developing your theme in `web/app/themes` :)
-7. Update your `/etc/hosts` file with same IP address and domain which you set in the second step, or use the default: `192.168.30.11 wordpress.local`
+7. Update your `/etc/hosts` file with same IP address and domain which you set in the second step, or use the default: `192.168.30.11 wordpress.local`.
 8. Access your WordPress installation using following URLs:
     * [http://wordpress.local](http://wordpress.local) - site
     * [http://wordpress.local/wp/wp-admin](http://wordpress.local/wp/wp-admin) - admin panel
