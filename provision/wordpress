@@ -17,7 +17,7 @@
 # Use name-based virtual hosting.
 #
 
-ServerName wordpress.local
+ServerName [DOMAIN]
 
 #
 # VirtualHost example:
@@ -25,10 +25,10 @@ ServerName wordpress.local
 # The first VirtualHost section is used for all requests that do not
 # match a ServerName or ServerAlias in any <VirtualHost> block.
 #
-<VirtualHost 192.168.30.11:80>
+<VirtualHost *:80>
     DocumentRoot "/vagrant/web"
-    ServerName wordpress.local
-    ServerAlias *.wordpress.local
+    ServerName [DOMAIN]
+    ServerAlias *.[DOMAIN]
 
     Header set Access-Control-Allow-Origin "*"
 
@@ -41,7 +41,7 @@ ServerName wordpress.local
 
 <VirtualHost *:443>
     DocumentRoot "/vagrant/web"
-    ServerName wordpress.local
+    ServerName [DOMAIN]
     SSLEngine On
     SSLCertificateFile    /etc/ssl/server.cert
     SSLCertificateKeyFile /etc/ssl/server.key

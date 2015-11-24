@@ -29,7 +29,7 @@ It consists of the following components:
 ## Installation
 
 1. Clone this repo.
-2. (Optional) Adjust IP address and domain in the following files: `Vagrantfile`, `provision/wordpress`.
+2. Run `build.sh` script to adjust an IP address and a domain for your local environment.
 3. (Optional) Define your stage environments (eg. staging, production) in `config/deploy` and set correct repo URL and application name in `config/deploy.rb`
 4. Go to the project folder, type `vagrant up` and wait for Vagrant to setup your local environment.
 5. Type `vagrant ssh` and then download all the dependencies from Vagrant machine: `cd /vagrant && composer install`.
