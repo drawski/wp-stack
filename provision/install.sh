@@ -39,3 +39,8 @@ mysql -h localhost -uroot -proot -e "CREATE DATABASE IF NOT EXISTS wordpress"
 
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar 2>&1
+chmod +x wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp
+ln -sf /usr/local/bin/wp /usr/local/bin/wpcli
