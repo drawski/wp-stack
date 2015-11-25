@@ -7,7 +7,7 @@
 # IP addresses. This is indicated by the asterisks in the directives below.
 #
 # Please see the documentation at
-# <URL:http://httpd.apache.org/docs/2.2/vhosts/>
+# <URL:http://httpd.apache.org/docs/2.4/vhosts/>
 # for further details before you try to setup virtual hosts.
 #
 # You may use the command line option '-S' to verify your virtual host
@@ -42,6 +42,8 @@ ServerName [DOMAIN]
 <VirtualHost *:443>
     DocumentRoot "/vagrant/web"
     ServerName [DOMAIN]
+    ServerAlias *.[DOMAIN]
+
     SSLEngine On
     SSLCertificateFile    /etc/ssl/server.cert
     SSLCertificateKeyFile /etc/ssl/server.key

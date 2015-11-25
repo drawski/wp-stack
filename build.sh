@@ -25,8 +25,17 @@ sed -i '' -e "s/\[IP\]/$ip/g" Vagrantfile
 echo "Building Virtual Host config file"
 sed -i '' -e "s/\[DOMAIN\]/$domain/g" provision/wordpress
 
-echo "Creating .env.dev file"
-echo -e "WP_HOME=http://$domain\nWP_SITEURL=http://$domain/wp\n" > .env.dev
+echo "Creating .env file"
+echo -e "
+DB_NAME=wordpress
+DB_USER=root
+DB_PASSWORD=root
+DB_HOST=localhost
+
+WP_ENV=development
+WP_HOME=http://$domain
+WP_SITEURL=http://$domain/wp
+" > .env
 
 cat <<EOF
 
@@ -44,3 +53,5 @@ Please remember to update your /etc/hosts file with the following entry:
 $ip $domain
 
 EOF
+
+rm $0 # self-removal
